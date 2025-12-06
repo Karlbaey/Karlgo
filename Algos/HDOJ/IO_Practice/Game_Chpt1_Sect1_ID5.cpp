@@ -1,4 +1,5 @@
 // https://acm.hdu.edu.cn/game/entry/problem/show.php?chapterid=1&sectionid=1&problemid=3005
+// Title: A+B for Input-Output Practice (V)
 #include <stdio.h>
 
 int main()

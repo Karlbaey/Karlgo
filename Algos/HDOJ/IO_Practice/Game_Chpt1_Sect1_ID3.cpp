@@ -1,4 +1,5 @@
 // https://acm.hdu.edu.cn/game/entry/problem/show.php?chapterid=1&sectionid=1&problemid=3003s
+// Title: A+B for Input-Output Practice (III)
 #include <stdio.h>
 
 int main()
@@ -12,4 +13,6 @@ int main()
         }
         printf("%d\n", (long long)a + b);
     }
+
+    return 0;
 }
