@@ -3,7 +3,7 @@
 // @name:zh-CN                 各大 Online Judge 标题复制器
 // @name:en                    Online Judge Problem Title Copier
 // @namespace                  https://tampermonkey.net
-// @version                    v0.3
+// @version                    0.3.1
 // @author                     Jerry Karlbaey
 // @description                这个脚本可以复制各大 OJ 的题目标题，方便整理题号信息并收藏到本地
 // @description:zh-CN          这个脚本可以复制各大 OJ 的题目标题，方便整理题号信息并收藏到本地
