@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                       Online Judge 标题复制器
-// @name:zh-CN                 各大 Online Judge 标题复制器
+// @name:zh-CN                 Online Judge 标题复制器
 // @name:en                    Online Judge Problem Title Copier
 // @namespace                  https://tampermonkey.net
 // @version                    0.3.1
@@ -9,7 +9,7 @@
 // @description:zh-CN          这个脚本可以复制各大 OJ 的题目标题，方便整理题号信息并收藏到本地
 // @description:en             This script can copy the problem titles from major OJs, making it easy to organize problem numbers and save them locally.
 // @homepage                   https://github.com/Karlbaey/Karlgo
-// @supportURL                 https://github.com/Karlbaey/Karlgo/issue
+// @supportURL                 https://github.com/Karlbaey/Karlgo/issues
 // @grant                      GM_setClipboard
 // @license                    AGPL-3.0-only
 // @match                      *://onlinejudge.org/index.php*option=com_onlinejudge*page=show_problem*
