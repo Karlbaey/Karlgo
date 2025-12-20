@@ -3,7 +3,7 @@
 // @name:zh-CN                 Online Judge 标题复制器
 // @name:en                    Online Judge Problem Title Copier
 // @namespace                  https://tampermonkey.net
-// @version                    0.3.2
+// @version                    0.3.4
 // @author                     Jerry Karlbaey
 // @description                这个脚本可以复制各大 OJ 的题目标题，方便整理题号信息并收藏到本地
 // @description:zh-CN          这个脚本可以复制各大 OJ 的题目标题，方便整理题号信息并收藏到本地
@@ -70,7 +70,7 @@
       selector: ".title-TkVpy",
     },
     "acm.hdu.edu.cn": {
-      prefix: "HDU",
+      prefix: "HDOJ",
       // FIX: Use a more specific selector to target the problem title's h1,
       // which has a unique inline style. This avoids selecting the site's main banner h1.
       selector: "h1",
