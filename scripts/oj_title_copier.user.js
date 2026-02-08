@@ -3,7 +3,7 @@
 // @name:zh-CN                 Online Judge 标题复制器
 // @name:en                    Online Judge Problem Title Copier
 // @namespace                  https://tampermonkey.net
-// @version                    0.3.4
+// @version                    0.3.5
 // @author                     Jerry Karlbaey
 // @description                这个脚本可以复制各大 OJ 的题目标题，方便整理题号信息并收藏到本地
 // @description:zh-CN          这个脚本可以复制各大 OJ 的题目标题，方便整理题号信息并收藏到本地
@@ -20,6 +20,7 @@
 // @match                      *://www.luogu.com.cn/problem/*
 // @match                      *://www.lintcode.com/problem/*
 // @match                      *://acm.hdu.edu.cn/*
+// @match                      *://www.lanqiao.cn/*
 // ==/UserScript==
 
 (function () {
@@ -71,13 +72,21 @@
     },
     "acm.hdu.edu.cn": {
       prefix: "HDOJ",
-      // FIX: Use a more specific selector to target the problem title's h1,
-      // which has a unique inline style. This avoids selecting the site's main banner h1.
       selector: "h1",
       process: (text) => {
         const params = new URLSearchParams(window.location.search);
         const problemId = params.get("pid");
         return problemId ? `${problemId}_${text}` : text;
+      },
+    },
+    "www.lanqiao.cn": {
+      prefix: "LQ",
+      selector: "span.course-name",
+      process: (text) => {
+        const params = new URLSearchParams(window.location.search);
+        const problemID = params.get("problem_id");
+        const cleaned = text.replace(/^\d+\.\s/g, "").trim();
+        return `${problemID}_${cleaned}`;
       },
     },
   };
@@ -93,7 +102,7 @@
     if (
       titleElement.nextElementSibling &&
       titleElement.nextElementSibling.classList.contains(
-        "oj-title-copier-wrapper"
+        "oj-title-copier-wrapper",
       )
     ) {
       return;
