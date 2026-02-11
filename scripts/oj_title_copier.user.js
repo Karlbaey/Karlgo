@@ -3,7 +3,7 @@
 // @name:zh-CN                 Online Judge 标题复制器
 // @name:en                    Online Judge Problem Title Copier
 // @namespace                  https://tampermonkey.net
-// @version                    0.3.5
+// @version                    0.3.6
 // @author                     Jerry Karlbaey
 // @description                这个脚本可以复制各大 OJ 的题目标题，方便整理题号信息并收藏到本地
 // @description:zh-CN          这个脚本可以复制各大 OJ 的题目标题，方便整理题号信息并收藏到本地
@@ -21,6 +21,7 @@
 // @match                      *://www.lintcode.com/problem/*
 // @match                      *://acm.hdu.edu.cn/*
 // @match                      *://www.lanqiao.cn/*
+// @match                      *://atcoder.jp/*
 // ==/UserScript==
 
 (function () {
@@ -87,6 +88,20 @@
         const problemID = params.get("problem_id");
         const cleaned = text.replace(/^\d+\.\s/g, "").trim();
         return `${problemID}_${cleaned}`;
+      },
+    },
+    "atcoder.jp": {
+      prefix: "ATC",
+      selector: "span.h2",
+      process: (text) => {
+        const url = window.location.href;
+        const contestIdMatch = url.match(/\/contests\/([^\/]+)/);
+        const contestId = contestIdMatch ? contestIdMatch[1] : "unknown";
+        const parts = text.split(" - ");
+        const problemLetter = parts[0].trim();
+        const problemTitle = parts.slice(1).join(" - ").trim();
+        const formattedTitle = problemTitle.replace(/\s+/g, "_");
+        return `${contestId}_${problemLetter}_${formattedTitle}`;
       },
     },
   };
