@@ -11,6 +11,7 @@
 // @icon         https://www.nodeseek.com/static/image/favicon/android-chrome-192x192.png
 // @grant        none
 // @run-at       document-idle
+// @license      agpl-3.0
 // ==/UserScript==
 
 (function () {
