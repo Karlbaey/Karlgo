@@ -15,6 +15,5 @@
 | 脚本名称                                                   | 作用                                                       | 更新日期   |
 | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------- |
 | [oj_title_copier.user.js](scripts/oj_title_copier.user.js) | 提供一个按钮，快速复制当前题目的标题（将空格替换为下划线） | 2025-12-13 |
+|    [nodeseek_ctrl_enter_submit.user.js](scripts/nodeseek_ctrl_enter_submit.user.js)     | 给 nodeseek 论坛提供发帖快捷键    | 2026-05-10  |
 |                                                            |                                                            |            |
-|                                                            |                                                            |            |
-
